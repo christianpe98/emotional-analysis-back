@@ -18,6 +18,11 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+async def running():
+    return {"status": "RUNNING"}
+
+
 @app.get("/emotional/approaches")
 async def get_emotional_approaches():
     return {"approaches_codes": list(map(lambda option: {"label": option["label"], "code": option["code"]},
@@ -27,11 +32,14 @@ async def get_emotional_approaches():
 @app.get("/emotional")
 async def get_analyse_username(username: str, start_date: str, end_date: str, analysis_code: str):
     try:
-        start_time = datetime.strptime(start_date, '%Y-%m-%d').isoformat() + "Z"
+        start_time = datetime.strptime(
+            start_date, '%Y-%m-%d').isoformat() + "Z"
         end_time = datetime.strptime(end_date, '%Y-%m-%d')
-        end_time = end_time.replace(hour=23, minute=59, second=59).isoformat() + "Z"
+        end_time = end_time.replace(
+            hour=23, minute=59, second=59).isoformat() + "Z"
         tweets = TwitterHandler().getTweetsFromUsername(username, start_time, end_time)
-        analyzer = EmotionalAnalyzerBuilder.build_emotional_analyzer(analysis_code)
+        analyzer = EmotionalAnalyzerBuilder.build_emotional_analyzer(
+            analysis_code)
         result = []
         for tweet in tweets:
             ed = analyzer.execute(tweet.text)
