@@ -11,7 +11,7 @@ from core.emotional_analyzer import EmotionalAnalyzer
 class EmotionalAnalyzerBuilder:
 
     analysis_approaches_options = [
-        {"label":"APPROACH: Keyword - LEXICON: NRC Emotions","code":"LEXICON-NRC-EMOTIONS"},
+        {"label":"APPROACH: Keyword - LEXICON: NRC Emotion","code":"LEXICON-NRC-EMOTION"},
         {"label":"APPROACH: Keyword - LEXICCON: NRC Hashtag","code":"LEXICON-NRC-HASHTAG"},
         {"label":"APPROACH: Machine Learning - MODEL: Decision Tree - TRAINING DATASET: CARER","code":"MODEL-DECISION-TREE__CARER"},
         {"label": "APPROACH: Machine Learning - MODEL: Decision Tree - TRAINING DATASET: CARER 4 emotions",
@@ -71,7 +71,7 @@ class EmotionalAnalyzerBuilder:
         base_path_isear_4=f"{base_path}isear_4/"
         base_path_isear_carer=f"{base_path}carer_4-isear_4/"
 
-        if analysis_code == "LEXICON-NRC-EMOTIONS":
+        if analysis_code == "LEXICON-NRC-EMOTION":
             return EmotionalAnalyzer(EmotionalAnalysisLexicon(NRCEmotionLexicon()))
         if analysis_code == "LEXICON-NRC-HASHTAG":
             return EmotionalAnalyzer(EmotionalAnalysisLexicon(NRCHashtagLexicon()))

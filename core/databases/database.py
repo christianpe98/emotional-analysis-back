@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-from core.model.emotional_token import EmotionalToken
+from core.models.emotional_token import EmotionalToken
 
 
 class Database(ABC):

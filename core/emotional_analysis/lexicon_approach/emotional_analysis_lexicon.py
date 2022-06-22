@@ -1,5 +1,5 @@
 from core.emotional_analysis.emotional_analysis import EmotionalAnalysis
-from core.model.emotional_text import EmotionalText
+from core.models.emotional_text import EmotionalText
 from core.emotional_analysis.lexicon_approach.lexicons.lexicon import Lexicon
 from typing import List
 

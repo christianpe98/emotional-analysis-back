@@ -1,7 +1,7 @@
 import unittest
 
-from core.model.emotional_text import EmotionalText
-from core.model.token import Token
+from core.models.emotional_text import EmotionalText
+from core.models.token import Token
 from core.preprocessing.steps.removing_hashtags_step import RemovingHashtagsStep
 
 

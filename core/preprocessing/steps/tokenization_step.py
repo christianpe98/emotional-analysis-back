@@ -1,7 +1,7 @@
 from typing import List
 
 from nltk.tokenize import TweetTokenizer
-from core.model.token import Token
+from core.models.token import Token
 from nltk.tokenize.api import TokenizerI
 from nltk import pos_tag
 

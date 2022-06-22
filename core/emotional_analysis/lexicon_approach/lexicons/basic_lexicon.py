@@ -2,8 +2,8 @@ from abc import abstractmethod
 from typing import List
 from core.databases.database import Database
 from core.emotional_analysis.lexicon_approach.lexicons.lexicon import Lexicon
-from core.model.emotional_token import EmotionalToken
-from core.model.token import Token
+from core.models.emotional_token import EmotionalToken
+from core.models.token import Token
 
 
 class BasicLexicon(Lexicon):

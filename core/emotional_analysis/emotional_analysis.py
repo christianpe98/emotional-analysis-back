@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from core.model.emotional_text import EmotionalText
+from core.models.emotional_text import EmotionalText
 
 
 class EmotionalAnalysis(ABC):

@@ -1,7 +1,7 @@
 import unittest
 
-from core.model.emotional_text import EmotionalText
-from core.model.token import Token
+from core.models.emotional_text import EmotionalText
+from core.models.token import Token
 from core.preprocessing.steps.filtering_by_pos_tagging_step import FilteringByPosTaggingStep, PosTags
 
 

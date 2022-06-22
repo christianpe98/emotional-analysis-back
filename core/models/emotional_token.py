@@ -1,4 +1,4 @@
-from core.model.token import Token
+from core.models.token import Token
 
 
 class EmotionalToken:

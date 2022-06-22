@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from core.model.token import Token
+from core.models.token import Token
 
 class PreprocessingStep(ABC):
 

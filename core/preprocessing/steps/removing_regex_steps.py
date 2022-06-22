@@ -2,7 +2,7 @@ from re import Pattern
 from typing import List
 
 from core.preprocessing.steps.preprocessing_step import PreprocessingStep
-from core.model.token import Token
+from core.models.token import Token
 
 
 class RemovingByRegexStep(PreprocessingStep):

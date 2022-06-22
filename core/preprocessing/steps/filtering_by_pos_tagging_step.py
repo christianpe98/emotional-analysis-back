@@ -1,10 +1,10 @@
 from typing import List
 
-from core.model.emotional_text import EmotionalText
+from core.models.emotional_text import EmotionalText
 from core.preprocessing.steps.preprocessing_step import PreprocessingStep
 from enum import Enum
 
-from core.model.token import Token
+from core.models.token import Token
 
 
 class PosTags(Enum):

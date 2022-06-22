@@ -7,7 +7,7 @@ from core.preprocessing.steps.removing_links_step import RemovingLinksStep
 from core.preprocessing.steps.removing_stopwords_step import RemovingStopwordsStep
 from core.preprocessing.steps.spellchecking_step import SpellcheckingStep
 from core.preprocessing.steps.tokenization_step import TokenizationStep
-from core.model.token import Token
+from core.models.token import Token
 
 
 class Preprocessor:
