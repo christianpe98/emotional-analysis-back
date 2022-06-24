@@ -1,13 +1,16 @@
+from dotenv import load_dotenv
+
 from core.databases.database import Database
 from pymongo import MongoClient
 from typing import List
 from core.models.emotional_token import EmotionalToken
 from core.models.token import Token
-
+import os
+load_dotenv()
 
 class MongoDB(Database):
 
-    def __init__(self, collection_name: str, url="mongodb://localhost:27017/"):
+    def __init__(self, collection_name: str, url=os.getenv('MONGO_URL')):
         self.client = MongoClient(url)
         self.database = self.client["lexicons"]
         self.collection_name = collection_name

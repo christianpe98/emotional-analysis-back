@@ -27,7 +27,7 @@ class NRCEmotionLexicon(BasicLexicon):
                  database: Database = MongoDB(collection_name="nrc-emotion-lexicon--wordlevel_4-emotions")):
         super().__init__(emotions, database)
 
-    def load_into_database(self, lexicon_path="../../../files/NRC-Emotion-Lexicon-Wordlevel.txt") -> bool:
+    def load_into_database(self, lexicon_path) -> bool:
         with open(lexicon_path) as f:
             count = 0
             for line in f:
@@ -39,5 +39,5 @@ class NRCEmotionLexicon(BasicLexicon):
                     if emotion in self.emotions:  # no almacenamos relaciones con negativos y positivos
                         self.database.create({"keyword": keyword, "emotion": emotion.value})
                         count += 1
-                        print("lexiword: ", count)
+                print("count: ", count)
         return True

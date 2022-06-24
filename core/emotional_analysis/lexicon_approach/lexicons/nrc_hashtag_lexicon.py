@@ -27,7 +27,7 @@ class NRCHashtagLexicon(BasicLexicon):
                  database: Database = MongoDB(collection_name="nrc-hashtag-lexicon--4-emotions")):
         super().__init__(emotions, database)
 
-    def load_into_database(self, lexicon_path="../files/NRC-Hashtag-Emotion-Lexicon-v0.2.txt") -> bool:
+    def load_into_database(self, lexicon_path) -> bool:
         with open(lexicon_path) as f:
             count = 0
             for line in f:
@@ -38,5 +38,5 @@ class NRCHashtagLexicon(BasicLexicon):
                 if emotion in self.emotions:  # no almacenamos relaciones con negativos y positivos
                     self.database.create({"keyword": keyword, "emotion": emotion.value, "association": association})
                     count += 1
-                    print("lexiword: ", keyword, count)
+                    print("count: ", count)
         return True
