@@ -21,11 +21,15 @@ class TwitterHandler:
             bearer_token, consumer_key, consumer_secret, access_token, access_token_secret,wait_on_rate_limit=True)
 
     def get_user_id(self, username):
-        data = self.client.get_user(username=username).data
-        if data is None:
+        data= self.client.get_user(username=username,user_fields=["protected"]).data
+        user_id=data.id
+        if user_id is None:
             raise ValueError(
                 {"message": "Doesn't exist a user with the username: " + username, "code": "username-no-exist"})
-        return data.id
+        if data.protected:
+            raise ValueError(
+                {"message": "The user " + username + "has the their tweets protected", "code": "user-protected"})
+        return user_id
 
     def get_user_profile_info(self, username,user_fields=["created_at", "profile_image_url", "description", "public_metrics"]):
         data = self.client.get_user(username=username, user_fields=user_fields).data
